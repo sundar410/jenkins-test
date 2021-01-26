@@ -5,6 +5,7 @@ pipeline {
         stage('Deploy') {
             steps {
                 echo 'Deploy'
+                
             }
         }    
         stage('Build') {
@@ -15,6 +16,7 @@ pipeline {
         stage('Release') {
             steps {
                 echo 'Release'
+                git branch: 'main', credentialsId: 'github', url: 'https://github.com/sundar410/jenkins-test.git'
             }
         }    
     }
